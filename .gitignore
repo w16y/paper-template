@@ -1,0 +1,15 @@
+# Build output
+output/*.docx
+output/*.pdf
+output/*.html
+!output/.gitkeep
+
+# Temporary files
+tmp/
+~*
+*.tmp
+*.bak
+*.backup
+
+# macOS
+.DS_Store

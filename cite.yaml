@@ -1,0 +1,149 @@
+# 参考文献データベース
+# CSL-YAML形式で記述
+# 詳細: https://pandoc.org/MANUAL.html#citations
+
+references:
+  # 例: ジャーナル論文
+  - id: example2024
+    type: article-journal
+    author:
+      - family: Example
+        given: Author
+      - family: Sample
+        given: Coauthor
+    title: "Example Paper Title for Template Demonstration"
+    container-title: Journal of Examples
+    volume: 10
+    issue: 2
+    page: 100-120
+    DOI: "10.1234/example.2024.001"
+    issued:
+      year: 2024
+
+  # 例: 書籍
+  - id: knuth1984
+    type: book
+    author:
+      - family: Knuth
+        given: Donald E.
+    title: "The TeXbook"
+    publisher: Addison-Wesley
+    publisher-place: Reading, Massachusetts
+    ISBN: "0-201-13447-0"
+    issued:
+      year: 1984
+
+  # 例: ウェブサイト
+  - id: macfarlane2022
+    type: webpage
+    author:
+      - family: MacFarlane
+        given: John
+    title: "Pandoc User's Guide"
+    URL: https://pandoc.org/MANUAL.html
+    accessed:
+      year: 2022
+      month: 6
+      day: 15
+
+  # 例: 書籍の章
+  - id: xie2018
+    type: chapter
+    author:
+      - family: Xie
+        given: Yihui
+      - family: Allaire
+        given: J.J.
+      - family: Grolemund
+        given: Garrett
+    title: "R Markdown: The Definitive Guide"
+    container-title: "The R Series"
+    publisher: Chapman and Hall/CRC
+    publisher-place: Boca Raton, Florida
+    ISBN: "9781138359338"
+    issued:
+      year: 2018
+
+  # 例: 会議論文
+  - id: conference2023
+    type: paper-conference
+    author:
+      - family: Researcher
+        given: Alice
+      - family: Scientist
+        given: Bob
+    title: "Innovative Approaches to Academic Writing"
+    container-title: "Proceedings of the International Conference on Documentation"
+    page: 45-52
+    publisher: IEEE
+    DOI: "10.1109/ICDOC.2023.123456"
+    issued:
+      year: 2023
+      month: 9
+
+  # 例: 技術レポート
+  - id: techreport2024
+    type: report
+    author:
+      - literal: Digital Agency of Japan
+    title: "Guidelines for Open Data Publication"
+    number: "TR-2024-001"
+    publisher: Digital Agency
+    URL: https://www.digital.go.jp/reports/
+    issued:
+      year: 2024
+      month: 1
+
+  # 例: 学位論文
+  - id: thesis2023
+    type: thesis
+    author:
+      - family: Graduate
+        given: Student
+    title: "Advanced Techniques in Markdown-based Academic Writing"
+    publisher: University of Example
+    genre: PhD thesis
+    issued:
+      year: 2023
+
+  # 例: プレプリント
+  - id: preprint2024
+    type: article
+    author:
+      - family: Author
+        given: First
+      - family: Author
+        given: Second
+    title: "Preliminary Results on Template Effectiveness"
+    publisher: arXiv
+    URL: https://arxiv.org/abs/2024.12345
+    note: "Preprint"
+    issued:
+      year: 2024
+      month: 3
+
+  # 例: ソフトウェア
+  - id: software2024
+    type: software
+    author:
+      - family: Developer
+        given: Main
+    title: "Academic Writing Toolkit"
+    version: "2.0.0"
+    publisher: GitHub
+    URL: https://github.com/example/toolkit
+    issued:
+      year: 2024
+
+  # 例: データセット
+  - id: dataset2023
+    type: dataset
+    author:
+      - literal: Research Institute
+    title: "Academic Writing Patterns Dataset"
+    publisher: Zenodo
+    DOI: "10.5281/zenodo.1234567"
+    URL: https://zenodo.org/record/1234567
+    issued:
+      year: 2023
+      month: 7

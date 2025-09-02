@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
+  <rect width="600" height="400" fill="#f0f0f0"/>
+  
+  <!-- Title -->
+  <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" font-family="sans-serif">研究ワークフロー</text>
+  
+  <!-- Boxes -->
+  <rect x="50" y="80" width="120" height="60" fill="#4CAF50" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="110" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">データ収集</text>
+  
+  <rect x="240" y="80" width="120" height="60" fill="#2196F3" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="300" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">データ分析</text>
+  
+  <rect x="430" y="80" width="120" height="60" fill="#FF9800" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="490" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">結果の可視化</text>
+  
+  <rect x="145" y="200" width="120" height="60" fill="#9C27B0" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="205" y="235" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">論文執筆</text>
+  
+  <rect x="335" y="200" width="120" height="60" fill="#607D8B" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="395" y="235" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">レビュー</text>
+  
+  <rect x="240" y="320" width="120" height="60" fill="#795548" stroke="#333" stroke-width="2" rx="5"/>
+  <text x="300" y="355" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">出版</text>
+  
+  <!-- Arrows with inline arrowheads -->
+  <!-- Arrow 1: データ収集 -> データ分析 -->
+  <line x1="170" y1="110" x2="240" y2="110" stroke="#333" stroke-width="2"/>
+  <polygon points="240,105 250,110 240,115" fill="#333"/>
+  
+  <!-- Arrow 2: データ分析 -> 結果の可視化 -->
+  <line x1="360" y1="110" x2="430" y2="110" stroke="#333" stroke-width="2"/>
+  <polygon points="430,105 440,110 430,115" fill="#333"/>
+  
+  <!-- Arrow 3: データ分析 -> 論文執筆 -->
+  <line x1="300" y1="140" x2="205" y2="200" stroke="#333" stroke-width="2"/>
+  <polygon points="200,195 210,200 205,210" fill="#333"/>
+  
+  <!-- Arrow 4: 結果の可視化 -> レビュー -->
+  <line x1="490" y1="140" x2="395" y2="200" stroke="#333" stroke-width="2"/>
+  <polygon points="390,195 400,200 395,210" fill="#333"/>
+  
+  <!-- Arrow 5: 論文執筆 -> レビュー -->
+  <line x1="265" y1="230" x2="335" y2="230" stroke="#333" stroke-width="2"/>
+  <polygon points="335,225 345,230 335,235" fill="#333"/>
+  
+  <!-- Arrow 6: レビュー -> 出版 -->
+  <line x1="395" y1="260" x2="300" y2="320" stroke="#333" stroke-width="2"/>
+  <polygon points="295,315 305,320 300,330" fill="#333"/>
+  
+  <!-- Feedback loop (dashed) -->
+  <polyline points="240,350 110,350 110,140" 
+            stroke="#666" 
+            stroke-width="1" 
+            stroke-dasharray="5,5" 
+            fill="none"/>
+  <polygon points="105,140 110,130 115,140" fill="#666"/>
+  
+  <text x="80" y="250" font-size="12" fill="#666" font-family="sans-serif">フィードバック</text>
+</svg>
