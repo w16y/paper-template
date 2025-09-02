@@ -1,12 +1,11 @@
 # 学術論文執筆テンプレート
 
-MarkdownとPandocを使用した日本語学術論文執筆のためのテンプレートです。
+MarkdownとPandocを使用した学術論文執筆のためのテンプレートです。
 
 ## 特徴
 
 - Markdownで論文を執筆
 - PandocによるWord文書出力
-- 日本語・英語テンプレート
 - 参考文献管理（YAML形式）
 - Dockerによる環境依存なしのビルド
 
@@ -14,10 +13,8 @@ MarkdownとPandocを使用した日本語学術論文執筆のためのテンプ
 
 ```
 .
-├── template.md         # 日本語論文テンプレート（サンプル含む）
-├── template_en.md      # 英語論文テンプレート
-├── example_paper_en.md # 英語論文の例
-├── cite.yaml          # 参考文献データベース
+├── template.md         # 論文テンプレート
+├── cite.yaml          # 参考文献
 ├── Makefile           # ビルド自動化
 ├── config/            # Pandoc設定ファイル
 │   ├── _hinagata-horizontal-ja.docx  # Word出力テンプレート
@@ -32,7 +29,7 @@ MarkdownとPandocを使用した日本語学術論文執筆のためのテンプ
 
 ### 1. 新しい論文の作成
 
-1. `template.md`（日本語）または`template_en.md`（英語）をベースに編集
+1. `template.md`をベースに執筆
 2. YAMLヘッダー（title, author等）を編集
 3. 各セクションに内容を記入
 
@@ -83,14 +80,3 @@ make help
 
 - Docker Desktop または Docker Engine
 - Make（makeコマンド）
-
-## カスタマイズ
-
-### 出力フォーマット
-`config/_output.yaml`で出力設定を変更可能
-
-### 引用スタイル
-`config/_ieee.csl`を他のCSLファイルに置き換えることで引用スタイルを変更可能
-
-### Wordテンプレート
-`config/_hinagata-horizontal-ja.docx`を編集してWord出力のスタイルをカスタマイズ
