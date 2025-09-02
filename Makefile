@@ -14,15 +14,14 @@ else
 endif
 OUTPUT_DIR = output
 
-# Pandoc configuration
-PANDOC_FLAGS = -F pandoc-crossref \
+# Pandoc configuration (crossref disabled)
+PANDOC_FLAGS = \
 	--citeproc \
 	--reference-doc=config/_hinagata-horizontal-ja.docx \
 	--lua-filter=config/_pagebreak.lua \
 	--bibliography=cite.yaml \
 	--csl=config/_ieee.csl \
 	--metadata-file=config/_output.yaml \
-	--metadata-file=config/_crossref.yaml \
 	--number-sections
 
 # Docker configuration

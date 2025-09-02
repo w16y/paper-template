@@ -1,0 +1,19 @@
+{
+  "recommendations": [
+    "bierner.markdown-mermaid",
+    "bierner.markdown-preview-github-styles",
+    "editorconfig.editorconfig",
+    "janisdd.vscode-edit-csv",
+    "marp-team.marp-vscode",
+    "mechatroner.rainbow-csv",
+    "mosapride.zenkaku",
+    "ms-ceintl.vscode-language-pack-ja",
+    "pkief.material-icon-theme",
+    "sandcastle.vscode-open",
+    "tuttieee.emacs-mcx",
+    "yzane.markdown-pdf",
+    "yzhang.markdown-all-in-one",
+    "zero3.vscode-rmt"
+  ],
+  "unwantedRecommendations": []
+}

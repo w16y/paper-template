@@ -1,0 +1,30 @@
+root = true
+
+# Defaults
+[*]
+end_of_line = lf
+charset = utf-8
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_style = space
+indent_size = 2
+
+# Makefiles require tabs
+[Makefile]
+indent_style = tab
+
+# Keep trailing spaces in Markdown (intentional line breaks)
+[*.md]
+trim_trailing_whitespace = false
+
+# YAML / YML
+[*.yaml]
+indent_size = 2
+[*.yml]
+indent_size = 2
+
+# JSON / Lua
+[*.json]
+indent_size = 2
+[*.lua]
+indent_size = 2
