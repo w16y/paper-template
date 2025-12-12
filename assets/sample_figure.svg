@@ -1,61 +1,148 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg">
-  <rect width="600" height="400" fill="#f0f0f0"/>
-  
-  <!-- Title -->
-  <text x="300" y="30" text-anchor="middle" font-size="20" font-weight="bold" font-family="sans-serif">研究ワークフロー</text>
-  
-  <!-- Boxes -->
-  <rect x="50" y="80" width="120" height="60" fill="#4CAF50" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="110" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">データ収集</text>
-  
-  <rect x="240" y="80" width="120" height="60" fill="#2196F3" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="300" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">データ分析</text>
-  
-  <rect x="430" y="80" width="120" height="60" fill="#FF9800" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="490" y="115" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">結果の可視化</text>
-  
-  <rect x="145" y="200" width="120" height="60" fill="#9C27B0" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="205" y="235" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">論文執筆</text>
-  
-  <rect x="335" y="200" width="120" height="60" fill="#607D8B" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="395" y="235" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">レビュー</text>
-  
-  <rect x="240" y="320" width="120" height="60" fill="#795548" stroke="#333" stroke-width="2" rx="5"/>
-  <text x="300" y="355" text-anchor="middle" fill="white" font-size="14" font-family="sans-serif">出版</text>
-  
-  <!-- Arrows with inline arrowheads -->
-  <!-- Arrow 1: データ収集 -> データ分析 -->
-  <line x1="170" y1="110" x2="240" y2="110" stroke="#333" stroke-width="2"/>
-  <polygon points="240,105 250,110 240,115" fill="#333"/>
-  
-  <!-- Arrow 2: データ分析 -> 結果の可視化 -->
-  <line x1="360" y1="110" x2="430" y2="110" stroke="#333" stroke-width="2"/>
-  <polygon points="430,105 440,110 430,115" fill="#333"/>
-  
-  <!-- Arrow 3: データ分析 -> 論文執筆 -->
-  <line x1="300" y1="140" x2="205" y2="200" stroke="#333" stroke-width="2"/>
-  <polygon points="200,195 210,200 205,210" fill="#333"/>
-  
-  <!-- Arrow 4: 結果の可視化 -> レビュー -->
-  <line x1="490" y1="140" x2="395" y2="200" stroke="#333" stroke-width="2"/>
-  <polygon points="390,195 400,200 395,210" fill="#333"/>
-  
-  <!-- Arrow 5: 論文執筆 -> レビュー -->
-  <line x1="265" y1="230" x2="335" y2="230" stroke="#333" stroke-width="2"/>
-  <polygon points="335,225 345,230 335,235" fill="#333"/>
-  
-  <!-- Arrow 6: レビュー -> 出版 -->
-  <line x1="395" y1="260" x2="300" y2="320" stroke="#333" stroke-width="2"/>
-  <polygon points="295,315 305,320 300,330" fill="#333"/>
-  
-  <!-- Feedback loop (dashed) -->
-  <polyline points="240,350 110,350 110,140" 
-            stroke="#666" 
-            stroke-width="1" 
-            stroke-dasharray="5,5" 
-            fill="none"/>
-  <polygon points="105,140 110,130 115,140" fill="#666"/>
-  
-  <text x="80" y="250" font-size="12" fill="#666" font-family="sans-serif">フィードバック</text>
+<svg width="700" height="550" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- 矢印マーカー -->
+    <marker id="arrowhead" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#424242" />
+    </marker>
+    <marker id="arrowhead-feedback" markerWidth="8" markerHeight="8" refX="7" refY="2.5" orient="auto">
+      <polygon points="0 0, 7 2.5, 0 5" fill="#757575" />
+    </marker>
+  </defs>
+
+  <!-- 背景 -->
+  <rect width="700" height="550" fill="#ffffff"/>
+
+  <!-- タイトル -->
+  <text x="350" y="40" text-anchor="middle" font-size="24" font-weight="bold"
+        font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif" fill="#333">
+    卒業論文執筆ワークフロー
+  </text>
+
+  <!-- ボックス -->
+  <!-- テーマ設定 -->
+  <rect x="70" y="80" width="140" height="70" fill="#4CAF50"
+        stroke="#388E3C" stroke-width="2" rx="8"/>
+  <text x="140" y="120" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    テーマ設定
+  </text>
+
+  <!-- 文献調査 -->
+  <rect x="280" y="80" width="140" height="70" fill="#2196F3"
+        stroke="#1976D2" stroke-width="2" rx="8"/>
+  <text x="350" y="120" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    文献調査
+  </text>
+
+  <!-- 研究計画 -->
+  <rect x="490" y="80" width="140" height="70" fill="#FF9800"
+        stroke="#F57C00" stroke-width="2" rx="8"/>
+  <text x="560" y="120" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    研究計画
+  </text>
+
+  <!-- 実験・調査 -->
+  <rect x="175" y="200" width="140" height="70" fill="#9C27B0"
+        stroke="#7B1FA2" stroke-width="2" rx="8"/>
+  <text x="245" y="240" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    実験・調査
+  </text>
+
+  <!-- データ分析 -->
+  <rect x="385" y="200" width="140" height="70" fill="#00BCD4"
+        stroke="#0097A7" stroke-width="2" rx="8"/>
+  <text x="455" y="240" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    データ分析
+  </text>
+
+  <!-- 論文執筆 -->
+  <rect x="280" y="320" width="140" height="70" fill="#795548"
+        stroke="#5D4037" stroke-width="2" rx="8"/>
+  <text x="350" y="360" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    論文執筆
+  </text>
+
+  <!-- 指導教員確認 -->
+  <rect x="70" y="440" width="140" height="70" fill="#607D8B"
+        stroke="#455A64" stroke-width="2" rx="8"/>
+  <text x="140" y="475" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    指導教員
+  </text>
+  <text x="140" y="492" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    確認
+  </text>
+
+  <!-- 最終稿作成 -->
+  <rect x="280" y="440" width="140" height="70" fill="#E91E63"
+        stroke="#C2185B" stroke-width="2" rx="8"/>
+  <text x="350" y="480" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    最終稿作成
+  </text>
+
+  <!-- 提出 -->
+  <rect x="490" y="440" width="140" height="70" fill="#3F51B5"
+        stroke="#303F9F" stroke-width="2" rx="8"/>
+  <text x="560" y="480" text-anchor="middle" fill="white" font-size="16"
+        font-weight="500" font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    提出
+  </text>
+
+  <!-- 矢印 -->
+  <!-- テーマ設定 -> 文献調査 -->
+  <line x1="210" y1="115" x2="280" y2="115" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 文献調査 -> 研究計画 -->
+  <line x1="420" y1="115" x2="490" y2="115" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 文献調査 -> 実験・調査 -->
+  <line x1="330" y1="150" x2="265" y2="200" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 研究計画 -> データ分析 -->
+  <line x1="540" y1="150" x2="475" y2="200" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 実験・調査 -> データ分析 -->
+  <line x1="315" y1="235" x2="385" y2="235" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- データ分析 -> 論文執筆 -->
+  <line x1="435" y1="270" x2="370" y2="320" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 論文執筆 -> 指導教員確認 -->
+  <line x1="300" y1="390" x2="160" y2="440" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 論文執筆 -> 最終稿作成 -->
+  <line x1="350" y1="390" x2="350" y2="440" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- 最終稿作成 -> 提出 -->
+  <line x1="420" y1="475" x2="490" y2="475" stroke="#424242" stroke-width="2.5"
+        marker-end="url(#arrowhead)"/>
+
+  <!-- フィードバックループ（破線）：指導教員確認 -> 論文執筆 -->
+  <path d="M 70 475 L 40 475 L 40 355 L 280 355"
+        stroke="#757575" stroke-width="2" stroke-dasharray="8,4" fill="none"
+        marker-end="url(#arrowhead-feedback)"/>
+
+  <!-- フィードバックラベル -->
+  <rect x="35" y="405" width="80" height="26" fill="white" fill-opacity="0.95"
+        rx="4" stroke="#757575" stroke-width="1"/>
+  <text x="75" y="423" text-anchor="middle" font-size="13" fill="#757575"
+        font-family="'Hiragino Sans', 'Noto Sans JP', sans-serif">
+    修正指示
+  </text>
 </svg>
