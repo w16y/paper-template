@@ -78,6 +78,10 @@ local function is_newpage_command(command)
     or command:match '^\\pagebreak%{?%}?$'
 end
 
+local function is_section_break_command(command)
+  return command:match '^\\sectionbreak%{?%}?$'
+end
+
 -- Filter function called on each RawBlock element.
 function RawBlock (el)
   -- Don't do anything if the output is TeX
@@ -90,6 +94,13 @@ function RawBlock (el)
     -- use format-specific pagebreak marker. FORMAT is set by pandoc to
     -- the targeted output format.
     return newpage(FORMAT)
+  end
+  -- check for section break command
+  if el.format:match 'tex' and is_section_break_command(el.text) then
+    if FORMAT == 'docx' then
+      -- Insert a section break (next page) in Word
+      return pandoc.RawBlock('openxml', '<w:p><w:pPr><w:sectPr><w:type w:val="nextPage"/></w:sectPr></w:pPr></w:p>')
+    end
   end
   -- otherwise, leave the block unchanged
   return nil

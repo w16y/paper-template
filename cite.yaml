@@ -147,3 +147,26 @@ references:
     issued:
       year: 2023
       month: 7
+
+  # GitHub Markdownガイド
+  - id: github-markdown
+    type: webpage
+    author:
+      - literal: GitHub
+    title: "Writing on GitHub"
+    URL: https://docs.github.com/en/get-started/writing-on-github
+    accessed:
+      year: 2024
+      month: 12
+
+  # Pandoc公式サイト
+  - id: pandoc-official
+    type: webpage
+    author:
+      - family: MacFarlane
+        given: John
+    title: "Pandoc - A universal document converter"
+    URL: https://pandoc.org/
+    accessed:
+      year: 2024
+      month: 12

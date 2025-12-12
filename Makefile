@@ -2,7 +2,7 @@
 # Usage: make [target] [INPUT=file.md] [TIMESTAMP=false]
 
 # Default input file
-INPUT ?= template.md
+INPUT ?= b-thesis-template.md
 
 # Output configuration
 OUTPUT_NAME = $(basename $(INPUT))
@@ -14,11 +14,14 @@ else
 endif
 OUTPUT_DIR = output
 
-# Pandoc configuration (crossref disabled)
+# Pandoc configuration
 PANDOC_FLAGS = \
+	--filter pandoc-crossref \
 	--citeproc \
-	--reference-doc=config/_hinagata-horizontal-ja.docx \
+	--reference-doc=config/_b-thesis-template.docx \
+	--lua-filter=config/_toc-inject.lua \
 	--lua-filter=config/_pagebreak.lua \
+	--lua-filter=config/_page-settings.lua \
 	--bibliography=cite.yaml \
 	--csl=config/_ieee.csl \
 	--metadata-file=config/_output.yaml \
