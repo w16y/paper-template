@@ -63,9 +63,14 @@ end
 -- 文書全体の処理
 function Pandoc(doc)
   if FORMAT == 'docx' then
-    -- 文書の最後のセクション設定にもdocGrid設定を追加
+    -- 文書の最後のセクション設定にdocGrid設定とフッター参照を追加
+    -- rId7=footer1(偶数ページ), rId8=footer2(奇数ページ/default)
+    -- pgNumType w:start="1" でページ番号を1から開始
     local page_settings = string.format([[
 <w:sectPr>
+  <w:footerReference w:type="even" r:id="rId7"/>
+  <w:footerReference w:type="default" r:id="rId8"/>
+  <w:pgNumType w:start="1"/>
   <w:pgSz w:w="11906" w:h="16838"/>
   <w:pgMar w:top="1440" w:right="1440" w:bottom="1440" w:left="1440" w:header="720" w:footer="720" w:gutter="0"/>
   <w:cols w:space="720"/>

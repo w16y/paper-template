@@ -82,6 +82,10 @@ local function is_section_break_command(command)
   return command:match '^\\sectionbreak%{?%}?$'
 end
 
+local function is_content_start_command(command)
+  return command:match '^\\contentstart%{?%}?$'
+end
+
 -- Filter function called on each RawBlock element.
 function RawBlock (el)
   -- Don't do anything if the output is TeX
@@ -98,8 +102,22 @@ function RawBlock (el)
   -- check for section break command
   if el.format:match 'tex' and is_section_break_command(el.text) then
     if FORMAT == 'docx' then
-      -- Insert a section break (next page) in Word
-      return pandoc.RawBlock('openxml', '<w:p><w:pPr><w:sectPr><w:type w:val="nextPage"/></w:sectPr></w:pPr></w:p>')
+      -- Insert a section break (next page) in Word, no footer for this section
+      return pandoc.RawBlock('openxml',
+        '<w:p><w:pPr><w:sectPr>' ..
+        '<w:type w:val="nextPage"/>' ..
+        '</w:sectPr></w:pPr></w:p>')
+    end
+  end
+  -- check for content start command
+  if el.format:match 'tex' and is_content_start_command(el.text) then
+    if FORMAT == 'docx' then
+      -- Section break for TOC (no footer), then page number reset for next section
+      -- The footer will be inherited from the final sectPr in _page-settings.lua
+      return pandoc.RawBlock('openxml',
+        '<w:p><w:pPr><w:sectPr>' ..
+        '<w:type w:val="nextPage"/>' ..
+        '</w:sectPr></w:pPr></w:p>')
     end
   end
   -- otherwise, leave the block unchanged

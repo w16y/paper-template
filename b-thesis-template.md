@@ -32,7 +32,7 @@ PandocによるWord文書生成の実現
 
 [TOC]
 
-\sectionbreak
+\contentstart
 
 # 序論
 
