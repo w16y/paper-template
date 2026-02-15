@@ -16,7 +16,7 @@ references:
     author:
       - literal: 荒金陽助
       - literal: 下川清志
-      - literal: 金井敦
+      - literal: "金井　敦"
     title: "音声対話システムにおけるスケーラビリティ評価モデルの検討"
     container-title: 情報処理学会論文誌
     volume: 46
