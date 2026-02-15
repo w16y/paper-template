@@ -57,23 +57,38 @@ make help
 `cite.yaml`に参考文献を追加：
 
 ```yaml
-- id: author2024
+# 英語著者名: family/given を使用（イニシャルに自動変換される）
+- id: smith2024
   type: article-journal
   author:
-    - family: 著者姓
-      given: 著者名
-  title: 論文タイトル
-  container-title: ジャーナル名
+    - family: Smith
+      given: John
+  title: "Paper Title"
+  container-title: Journal Name
   volume: 1
-  issue: 1
+  page: 1-10
+  issued:
+    year: 2024
+
+# 日本語著者名: literal を使用（フルネームがそのまま出力される）
+- id: yamada2024
+  type: article-journal
+  author:
+    - literal: 山田太郎
+  title: "論文タイトル"
+  container-title: 情報処理学会論文誌
+  volume: 1
   page: 1-10
   issued:
     year: 2024
 ```
 
+> **注意**: 日本語の著者名には `literal` フィールドを使用してください。`family`/`given` を使うと名前がイニシャルに省略されピリオドが付いてしまいます。
+
 本文中での引用：
 ```markdown
-既存研究では[@author2024]...
+既存研究では[@smith2024]...
+複数の文献[@smith2024; @yamada2024]では...
 ```
 
 ## 必要な環境

@@ -1,8 +1,30 @@
 # 参考文献データベース
 # CSL-YAML形式で記述
 # 詳細: https://pandoc.org/MANUAL.html#citations
+#
+# 著者名の記述方法:
+#   英語名 → family/given を使用（イニシャルに自動変換される）
+#     - family: Smith
+#       given: John
+#   日本語名 → literal を使用（フルネームがそのまま出力される）
+#     - literal: 山田太郎
 
 references:
+  # 例: 和文雑誌（日本語著者名は literal を使用）
+  - id: arakane2005
+    type: article-journal
+    author:
+      - literal: 荒金陽助
+      - literal: 下川清志
+      - literal: 金井敦
+    title: "音声対話システムにおけるスケーラビリティ評価モデルの検討"
+    container-title: 情報処理学会論文誌
+    volume: 46
+    issue: 9
+    page: 2269-2278
+    issued:
+      year: 2005
+
   # 例: ジャーナル論文
   - id: example2024
     type: article-journal

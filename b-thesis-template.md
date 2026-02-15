@@ -203,6 +203,7 @@ make INPUT=paper.md
 
 ```yaml
 references:
+  # 英語著者名: family/given を使用
   - id: example2024
     type: article-journal
     author:
@@ -214,9 +215,21 @@ references:
     page: 100-120
     issued:
       year: 2024
+
+  # 日本語著者名: literal を使用
+  - id: yamada2024
+    type: article-journal
+    author:
+      - literal: 山田太郎
+    title: "日本語論文のタイトル"
+    container-title: 情報処理学会論文誌
+    volume: 65
+    page: 1-10
+    issued:
+      year: 2024
 ```
 
-`id`フィールドが引用キーとなり、本文中で`[@example2024]`のように参照する。文献の引用は以下の形式で記述する。
+`id`フィールドが引用キーとなり、本文中で`[@example2024]`のように参照する。日本語の著者名は `family`/`given` ではなく `literal` フィールドを使用すること。`family`/`given` を使うと、名前がイニシャルに省略されピリオドが付いてしまう。例えば、和文雑誌の文献[@arakane2005]は `literal` フィールドで著者名を記述している。文献の引用は以下の形式で記述する。
 
 ```markdown
 先行研究[@example2024]では...
